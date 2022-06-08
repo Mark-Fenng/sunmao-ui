@@ -19,7 +19,7 @@ import {
 } from '@chakra-ui/react';
 import { ComponentSchema } from '@sunmao-ui/core';
 import { CORE_VERSION, CoreTraitName } from '@sunmao-ui/shared';
-import { SizeWidget, ColorWidget } from '@sunmao-ui/editor-sdk';
+import { SizeWidget, ColorWidget, SpaceWidget } from '@sunmao-ui/editor-sdk';
 import { CssEditor } from '../../../components/CodeEditor';
 import { genOperation } from '../../../operations';
 import { formWrapperCSS } from '../style';
@@ -192,6 +192,13 @@ export const StyleTraitForm: React.FC<Props> = props => {
               </CollapsibleFormControl>
               <CollapsibleFormControl label="Size">
                 <SizeWidget
+                  {...widgetProps}
+                  value={_cssProperties}
+                  onChange={changeCssProperties}
+                />
+              </CollapsibleFormControl>
+              <CollapsibleFormControl label="Space">
+                <SpaceWidget
                   {...widgetProps}
                   value={_cssProperties}
                   onChange={changeCssProperties}
